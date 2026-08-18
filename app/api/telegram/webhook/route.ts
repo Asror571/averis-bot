@@ -188,20 +188,15 @@ async function handleUpdate(body: any) {
         `🎓 Sinf: <b>${state.grade}</b>\n` +
         `👦 O'quvchi: <b>${state.studentName}</b>\n` +
         `📞 Telefon: <code>${phone}</code>\n\n` +
-        `Asosiy menyuga qaytdingiz. 👇`,
-        { reply_markup: mainMenuKeyboard() } // Ariza tugagach yana menyuni ko'rsatamiz
+        `❓ Savollar bo'lsa: /start bosing`,
+        { reply_markup: mainMenuKeyboard() } 
       );
 
       setState(from.id, { ...state, state: "MAIN_MENU" });
       return;
     }
 
-    // Boshqa tushunarsiz xabarlar
-    if (state.state === "MAIN_MENU") {
-      await sendMessage(chat.id, `Iltimos, pastdagi menyudan kerakli bo'limni tanlang. 👇`, {
-        reply_markup: mainMenuKeyboard()
-      });
-    }
+    // Noma'lum xabarlarni shunchaki e'tiborsiz qoldiramiz (hech narsa yozmaymiz)
     return;
   }
 
