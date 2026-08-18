@@ -5,7 +5,7 @@ import { validateName, normalizePhone } from "../../../../lib/validation/applica
 
 const TELEGRAM_SECRET = process.env.TELEGRAM_WEBHOOK_SECRET;
 const ADMIN_CHAT_ID = process.env.ADMIN_CHAT_ID!;
-const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || "").replace(/\/$/, "");
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || "https://averis-bot-mql6.vercel.app").replace(/\/$/, "");
 
 // ─── In-memory state (Vercel serverless: har restartda tozalanadi) ─────────────
 interface UserState {
