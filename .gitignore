@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment variables (NEVER commit these!)
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Old Python bot (not used)
+averis_bot/
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+npm-debug.log*
