@@ -33,3 +33,22 @@ export function contactKeyboard() {
 export function removeKeyboard() {
   return { remove_keyboard: true };
 }
+
+export function mainMenuKeyboard() {
+  return {
+    keyboard: [
+      [{ text: "🏫 Averis Academy haqida" }],
+      [{ text: "📝 Ariza qoldirish" }, { text: "📞 Bog'lanish" }],
+    ],
+    resize_keyboard: true,
+  };
+}
+
+export function subscriptionInlineKeyboard(channelUrl: string, pendingAction: string) {
+  return {
+    inline_keyboard: [
+      [{ text: "📢 Kanalga a'zo bo'lish", url: channelUrl }],
+      [{ text: "✅ A'zo bo'ldim", callback_data: `check_sub:${pendingAction}` }],
+    ],
+  };
+}

@@ -49,10 +49,24 @@ export async function sendPhoto(
 
 export async function answerCallbackQuery(
   callbackQueryId: string,
-  text?: string
+  text?: string,
+  showAlert?: boolean
 ) {
   return post("answerCallbackQuery", {
     callback_query_id: callbackQueryId,
-    ...(text ? { text } : {}),
+    ...(text ? { text, show_alert: showAlert } : {}),
   });
+}
+
+export async function getChatMember(chatId: string | number, userId: string | number) {
+  try {
+    const res = await post("getChatMember", {
+      chat_id: chatId,
+      user_id: userId,
+    });
+    return res.result;
+  } catch (err) {
+    console.error("[TG getChatMember ERROR]", err);
+    return null;
+  }
 }
